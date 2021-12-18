@@ -10,9 +10,16 @@
 
 import React from 'react';
 import {SafeAreaView} from 'react-native';
+import ArrowComponent from './src/screens/ArrowComponent';
+import ClassComponents from './src/screens/ClassComponents';
 
 const App = () => {
-  return <SafeAreaView></SafeAreaView>;
+  return (
+    <SafeAreaView>
+      <ClassComponents />
+      <ArrowComponent />
+    </SafeAreaView>
+  );
 };
 
 export default App;
