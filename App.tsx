@@ -9,20 +9,19 @@
  */
 
 import React from 'react';
-import {SafeAreaView} from 'react-native';
-import ArrowComponent from './src/screens/ArrowComponent';
-import ClassComponents from './src/screens/ClassComponents';
+import {SafeAreaView, ScrollView} from 'react-native';
 import * as D from './src/data';
 import Person from './src/screens/Person';
 
-const person = D.createRandomPerson();
+const people = D.makeArray(100).map(D.createRandomPerson);
 
 const App = () => {
+  const children = people.map(person => (
+    <Person key={person.id} person={person} />
+  ));
   return (
     <SafeAreaView>
-      <ClassComponents />
-      <ArrowComponent />
-      <Person person={person} />
+      <ScrollView>{children}</ScrollView>
     </SafeAreaView>
   );
 };
